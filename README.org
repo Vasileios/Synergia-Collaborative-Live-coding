@@ -12,7 +12,7 @@ add users and export ovpn files for each user
 
 download open-vpn on mac and upload a user.ovpn
 
-login with ssh using the server ip (192.168.1.51)
+login with ssh using the server's ip (192.168.1.51)
 
 =ssh pi@192.168.1.51--->pass:raspberry=
 
