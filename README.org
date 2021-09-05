@@ -8,7 +8,7 @@ set up router for dns
 install ovpn on rpi
 
 add users and export ovpn files for each user
-* setting up open-vpn
+* set up open-vpn
 
 download open-vpn on mac and upload a user.ovpn
 
@@ -33,7 +33,7 @@ Next go to oscgroups folder and run the below command:
 
 =./bin/OscGroupsClient...=
 
-then open emacs and SC and run OscGroups.enable
+then open emacs and SC and run =OscGroups.enable=
 
 Connect to vpn from openvpn app
 
@@ -41,6 +41,6 @@ then login with ssh on rpi server
 
 run OscGroups on rpi and then open emacs-shared with SC
 
-open various SC workspaces and run OscGroups.enable for each workspace
+open various SC workspaces and run =OscGroups.enable= for each workspace
 
 Have fun!!
