@@ -4,17 +4,32 @@
 
 
 set up router for dns
+
 install ovpn on rpi
+
 add users and export ovpn files for each user
 * setting up open-vpn
+
 download open-vpn on mac and upload a user.ovpn
+
 login with ssh using the server ip (192.158.1.51)
-ssh pi@192.168.1.51--->pass:raspberry
+
+=ssh pi@192.168.1.51--->pass:raspberry=
+
 * install collaborative tmux with emacs
+
+https://www.emacswiki.org/emacs/CollaborativeEditing
+
 * install OSCGroups both on rpi and mac
+
 run first oscgroups ./bin/oscgroupsclient...
+
 then open emacs and SC and run OscGroups.enable
+
 then login with ssh on rpi server
+
 run OscGroups on rpi and then open emacs-shared with SC
-open various SC workspaces and run OscGroups.enable on each workspace
+
+open various SC workspaces and run OscGroups.enable for each workspace
+
 Have fun
