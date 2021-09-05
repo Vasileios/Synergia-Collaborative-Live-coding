@@ -2,7 +2,7 @@
 
 * Set up a vpn server in rpi
 
-no-ip server
+
 set up router for dns
 install ovpn on rpi
 add users and export ovpn files for each user
