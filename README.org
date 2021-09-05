@@ -31,7 +31,7 @@ Go to oscgroups folder and run =make=
 
 Next go to oscgroups folder and run the below command:
 
-run first oscgroups ./bin/OscGroupsClient...
+=./bin/OscGroupsClient...=
 
 then open emacs and SC and run OscGroups.enable
 
