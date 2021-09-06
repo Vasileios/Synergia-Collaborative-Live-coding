@@ -1,5 +1,5 @@
 * Script documentation
-1. Implement the appropriate adjustments in the script. Edit by means of any editor.
+1. Do the appropriate adjustments in the script. Edit with any editor.
    1. Set a valid path to "/oscgroups/bin"
    2. Optional: Set the name (rpi_name --> whatever)
 2. run 1st shell script:
