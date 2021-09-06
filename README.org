@@ -41,7 +41,7 @@ Connect to vpn from openvpn app
 
 then login with ssh on rpi server
 
-run ./bin/OscGroupClient... on rpi and then open emacs-shared with SC
+run =./bin/OscGroupClient...= on rpi and then open emacs-shared with SC
 
 open various SC workspaces and run =OscGroups.enable= for each workspace
 
