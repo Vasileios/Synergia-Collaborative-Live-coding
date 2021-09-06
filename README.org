@@ -28,7 +28,7 @@ then clone oscpack from here: https://github.com/RossBencina/oscpack
 
 Go to oscgroups folder and run =make=
 
-Jason's solution
+/Jason's solution/
 
 Next go to oscgroups folder and run the below command:
 
