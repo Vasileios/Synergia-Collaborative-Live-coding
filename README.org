@@ -1,4 +1,4 @@
-#+TITLE: Collaborative editing - netwroked live coding performances
+#+TITLE: Collaborative editing - networked live coding performances
 
 * Set up a vpn server in rpi
 
