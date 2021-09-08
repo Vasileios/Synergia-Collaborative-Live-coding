@@ -4,19 +4,14 @@
    2. Optional: Set the name (rpi_name --> whatever)
 2. run 1st shell script:
    #+BEGIN_SRC
-   ./1_novpn.sh
+   ./1_oscgroups_sclang.sh
    #+END_SRC
-3. In the new emacs GUI:
-   1. M-x switch-to-sclang-workspace (C-c-W)
-   2. M-x sclang-start (C-c-C-o)
-4. Configure openVPN connection (drag-drop the .opvpn file and connect)
-5. run 2nd shell script:
+3. Configure openVPN connection (drag-drop the .opvpn file and connect)
+4. run 2nd shell script:
    #+BEGIN_SRC
    ./2_after_vpn.sh
    #+END_SRC
-6.
-7.
-8.
+
 * Alternative
 
 Run just sclang on mac. Dont need to open emacs
