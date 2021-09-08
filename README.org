@@ -21,8 +21,12 @@ How to install oscgroups: https://github.com/RossBencina/oscgroups
 
 First open terminal and Clone this repository into your computer
 
-Then go to shell_scripts folder and run the 1_novpn.sh to run OSCGroups on your
+Then go to shell_scripts folder and run the 1_oscgroups_sclang.sh to run OSCGroups on your
 machine and SuperCollider
+
+Then read the below to run oscgroups in SupeCollider:
+
+https://github.com/iani/sc-hacks-redux/blob/master/OSCGroups/OscGroupsGuide.org
 
 *Next step* (Connext to server)
 
