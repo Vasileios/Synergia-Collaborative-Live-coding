@@ -58,7 +58,9 @@ You can start live coding with other users in SuperCollider
 Have fun!!
 
 * TODO
-create shell script to open emacs-client and emacs with supercollider workspaces
+1. create shell script to open emacs-client and emacs with supercollider workspaces
+
+2. create a startup.scd file to boot the server and to run OscGroups.enable
 
 * Connect to server
 
