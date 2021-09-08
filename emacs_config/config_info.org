@@ -1,0 +1,18 @@
+* config_info
+
+  1. load emacs with specified init file (specify correct path in the shell script as well)
+     #+BEGIN_SRC
+     emacs -l ~/init_synergia.el
+     #+END_SRC
+
+  2. init_synergia.el actually starts up emacs with 2 sclang workspaces & starts the sclang
+     #+BEGIN_SRC
+     (delete-other-windows)
+     (sclang-switch-to-workspace)
+     (split-window-horizontally)
+     (split-window-vertically)
+     (buf-move-down)
+     (sclang-switch-to-workspace)
+     (buf-move-up)
+     (sclang-start)
+     #+END_SRC
