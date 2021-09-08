@@ -43,8 +43,17 @@ below command:
 ./process.sh
 #+end_src
 
+This will run OSCGroupClient and will open a new tmux widnow.
+Now its time to run emacs-shared as a client.
 
-On server you can start live coding with other users in SuperCollider
+#+begin_src
+emacsshare &&
+emacstty
+#+end_src
+
+Voila!
+
+You can start live coding with other users in SuperCollider
 
 Have fun!!
 
