@@ -31,11 +31,12 @@ https://github.com/iani/sc-hacks-redux/blob/master/OSCGroups/OscGroupsGuide.org
 
 *Next step* (Connext to server)
 
-Connect to the server from openvpn app and then login with SSH (see [[Connect to server]])
+Connect to the server from openvpn app and then login with SSH (see *Connect to
+server*)
 
 To do this run the 2_after_vpn.sh
 
-If you successfully loged in to the server go to ~/startup directory and run the
+If you successfully logged in to the server go to ~/startup directory and run the
 below command:
 
 #+begin_src
