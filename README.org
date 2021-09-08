@@ -57,6 +57,9 @@ You can start live coding with other users in SuperCollider
 
 Have fun!!
 
+* TODO
+create shell script to open emacs-client and emacs with supercollider workspaces
+
 * Connect to server
 
 To Connect to the server you need to download open-vpn
