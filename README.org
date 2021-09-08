@@ -20,26 +20,41 @@ login with ssh using the server's ip (192.168.1.51)
 
 https://www.emacswiki.org/emacs/CollaborativeEditing
 
-* install OSCGroups both on rpi and mac
+* install OSCGroups both on rpi and mac (UNIX)
 
-on mac clone OSCGroups from here: https://github.com/RossBencina/oscgroups
+Client Side
 
-then clone oscpack from here: https://github.com/RossBencina/oscpack
+On your unix machine (in this case a Mac) create a folder and name it =OSCGroupsInstall=
 
-Go to oscgroups folder and run =make=
+inside this folder clone OSCGroups from here: https://github.com/RossBencina/oscgroups
 
+In OSCGroupsInstall folder clone also oscpack from here: https://github.com/RossBencina/oscpack
+
+Now go to oscgroups folder and run =make=
+
+Server side
+
+Do the same for the server side (Install OSCGroups on RPI)
+
+Now try to communicate (sending msgs from server to client and the opposite)
+
+* Sending osc from server to mac
 
 /Jason's solution/
 
-Next go to oscgroups folder and run the below command:
+*First step*
+
+Go to oscgroups folder on your mac and run the below command:
 
 =./bin/OscGroupClient...=
 
 then open emacs and SC and run =OscGroups.enable=
 
+*Next step*
+
 Connect to vpn from openvpn app
 
-then login with ssh on rpi server
+then login with =ssh= on rpi server
 
 run =./bin/OscGroupClient...= on rpi and then open emacs-shared with SC
 
