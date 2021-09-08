@@ -1,10 +1,10 @@
 ;;; init.el --- Prelude's configuration entry point.
 ;;
-;; Copyright (c) 2011-2016 Bozhidar Batsov
+;; Copyright (c) 2011-2020 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
-;; URL: http://batsov.com/prelude
-;; Version: 1.0.0
+;; URL: https://github.com/bbatsov/prelude
+;; Version: 1.1.0-snapshot
 ;; Keywords: convenience
 
 ;; This file is not part of GNU Emacs.
@@ -37,20 +37,21 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-;; (package-initialize)
+                                        ;(package-initialize)
 
-(defvar current-user
-      (getenv
-       (if (equal system-type 'windows-nt) "USERNAME" "USER")))
+(defvar prelude-user
+  (getenv
+   (if (equal system-type 'windows-nt) "USERNAME" "USER")))
 
-(message "Prelude is powering up... Be patient, Master %s!" current-user)
+(message "[Prelude] Prelude is powering up... Be patient, Master %s!" prelude-user)
 
-(when (version< emacs-version "24.4")
-  (error "Prelude requires at least GNU Emacs 24.4, but you're running %s" emacs-version))
+(when (version< emacs-version "25.1")
+  (error "[Prelude] Prelude requires GNU Emacs 25.1 or newer, but you're running %s" emacs-version))
 
 ;; Always load newest byte code
 (setq load-prefer-newer t)
 
+;; Define Prelude's directory structure
 (defvar prelude-dir (file-name-directory load-file-name)
   "The root dir of the Emacs Prelude distribution.")
 (defvar prelude-core-dir (expand-file-name "core" prelude-dir)
@@ -67,22 +68,22 @@ by Prelude.")
   "This directory is for your personal configuration, that you want loaded before Prelude.")
 (defvar prelude-vendor-dir (expand-file-name "vendor" prelude-dir)
   "This directory houses packages that are not yet available in ELPA (or MELPA).")
-(defvar prelude-savefile-dir (expand-file-name "savefile" prelude-dir)
+(defvar prelude-savefile-dir (expand-file-name "savefile" user-emacs-directory)
   "This folder stores all the automatically generated save/history-files.")
-(defvar prelude-modules-file (expand-file-name "prelude-modules.el" prelude-dir)
-  "This files contains a list of modules that will be loaded by Prelude.")
+(defvar prelude-modules-file (expand-file-name "prelude-modules.el" prelude-personal-dir)
+  "This file contains a list of modules that will be loaded by Prelude.")
 
 (unless (file-exists-p prelude-savefile-dir)
   (make-directory prelude-savefile-dir))
 
 (defun prelude-add-subfolders-to-load-path (parent-dir)
- "Add all level PARENT-DIR subdirs to the `load-path'."
- (dolist (f (directory-files parent-dir))
-   (let ((name (expand-file-name f parent-dir)))
-     (when (and (file-directory-p name)
-                (not (string-prefix-p "." f)))
-       (add-to-list 'load-path name)
-       (prelude-add-subfolders-to-load-path name)))))
+  "Add all level PARENT-DIR subdirs to the `load-path'."
+  (dolist (f (directory-files parent-dir))
+    (let ((name (expand-file-name f parent-dir)))
+      (when (and (file-directory-p name)
+                 (not (string-prefix-p "." f)))
+        (add-to-list 'load-path name)
+        (prelude-add-subfolders-to-load-path name)))))
 
 ;; add Prelude's directories to Emacs's `load-path'
 (add-to-list 'load-path prelude-core-dir)
@@ -99,12 +100,12 @@ by Prelude.")
 
 ;; preload the personal settings from `prelude-personal-preload-dir'
 (when (file-exists-p prelude-personal-preload-dir)
-  (message "Loading personal configuration files in %s..." prelude-personal-preload-dir)
-  (mapc 'load (directory-files prelude-personal-preload-dir 't "^[^#].*el$")))
+  (message "[Prelude] Loading personal configuration files in %s..." prelude-personal-preload-dir)
+  (mapc 'load (directory-files prelude-personal-preload-dir 't "^[^#\.].*el$")))
 
-(message "Loading Prelude's core...")
+(message "[Prelude] Loading Prelude's core modules...")
 
-;; the core stuff
+;; load the core stuff
 (require 'prelude-packages)
 (require 'prelude-custom)  ;; Needs to be loaded before core, editor and ui
 (require 'prelude-ui)
@@ -113,135 +114,59 @@ by Prelude.")
 (require 'prelude-editor)
 (require 'prelude-global-keybindings)
 
-;; OSX specific settings
+;; macOS specific settings
 (when (eq system-type 'darwin)
-  (require 'prelude-osx))
+  (require 'prelude-macos))
 
-(message "Loading Prelude's modules...")
+;; Linux specific settings
+(when (eq system-type 'gnu/linux)
+  (require 'prelude-linux))
+
+;; WSL specific setting
+(when (and (eq system-type 'gnu/linux) (getenv "WSLENV"))
+  (require 'prelude-wsl))
+
+;; Windows specific settings
+(when (eq system-type 'windows-nt)
+  (require 'prelude-windows))
+
+(message "[Prelude] Loading Prelude's additional modules...")
 
 ;; the modules
 (if (file-exists-p prelude-modules-file)
     (load prelude-modules-file)
-  (message "Missing modules file %s" prelude-modules-file)
-  (message "You can get started by copying the bundled example file"))
+  (message "[Prelude] Missing personal modules file %s" prelude-modules-file)
+  (message "[Prelude] Falling back to the bundled example file sample/prelude-modules.el")
+  (message "[Prelude] You should copy this file to your personal configuration folder and tweak it to your liking")
+  (load (expand-file-name "sample/prelude-modules.el" user-emacs-directory)))
 
-;; config changes made through the customize UI will be store here
+;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" prelude-personal-dir))
 
 ;; load the personal settings (this includes `custom-file')
 (when (file-exists-p prelude-personal-dir)
-  (message "Loading personal configuration files in %s..." prelude-personal-dir)
-  (mapc 'load (directory-files prelude-personal-dir 't "^[^#].*el$")))
+  (message "[Prelude] Loading personal configuration files in %s..." prelude-personal-dir)
+  (mapc 'load (delete
+               prelude-modules-file
+               (directory-files prelude-personal-dir 't "^[^#\.].*\\.el$"))))
 
-(message "Prelude is ready to do thy bidding, Master %s!" current-user)
+(message "[Prelude] Prelude is ready to do thy bidding, Master %s!" prelude-user)
+
+;; Patch security vulnerability in Emacs versions older than 25.3
+(when (version< emacs-version "25.3")
+  (with-eval-after-load "enriched"
+    (defun enriched-decode-display-prop (start end &optional param)
+      (list start end))))
 
 (prelude-eval-after-init
  ;; greet the use with some useful tip
  (run-at-time 5 nil 'prelude-tip-of-the-day))
 
+(require 'prelude-helm-everywhere)
 
-;;================== SCLANG-MODE ===================
-(add-to-list 'load-path "~/.emacs.d/personal/packages/el")
-;;(add-to-list 'load-path "/usr/local/bin/sclang")
-(require 'sclang)
+(setq byte-compile-warnings '(cl-functions))
 
-;;-- open .scd files with sclang mode and auto complete
-(setq auto-mode-alist (cons '("\\.scd$" . sclang-mode) auto-mode-alist))
-;;(add-to-list 'load-path "~/.emacs.d/personal/packages/el")
-;;(require 'sclang)
-;;(setq auto-mode-alist (cons '("\\.scd$" . sclang-mode) auto-mode-alist))
-(add-hook 'sclang-library-startup-hook
-          (lambda () (and sclang-show-workspace-on-startup
-          (not (eq major-mode 'sclang-mode))
-          (sclang-switch-to-workspace))))
-
-;;display numbers
-(split-window-right)
-(global-display-line-numbers-mode)
-
-;; Reverse colors for the border to have nicer line
-(set-face-inverse-video-p 'vertical-border nil)
-(set-face-background 'vertical-border (face-background 'default))
-;; Set symbol for the border
-(set-display-table-slot standard-display-table
-                        'vertical-border
-                        (make-glyph-code ?┃))
-
-;;Text background colour after 80 column
-;; & theme change when latex
-(defun latex-mode-theme-hook ()
-  (require 'color-theme)
-;;  (color-theme-initialize)
-;;  (color-theme-gray30)
-  (font-lock-debug-fontify))
-(add-hook 'latex-mode-hook
-          'latex-mode-theme-hook)
-
-;;Not working - back to moe-dark when latex buffer killed
-;;(defun kill-buffer-hook-setup ()
-;;  (if (and buffer-file-name
-;;           (file-name-extension buffer-file-name)
-;;           (string= (downcase (file-name-extension buffer-file-name)) "pdf")
-;;           (yes-or-no-p "Set bookmark with current file name?"))
-;;      (bookmark-set (file-name-nondirectory buffer-file-name) nil)))
-;;(add-hook 'kill-buffer-hook 'kill-buffer-hook-setup)
-
-;; foxdot-mode
-(add-to-list 'load-path (expand-file-name "personal/postload/foxdot-mode" "~/.emacs.d"))
-(require 'foxdot-mode)
-(add-to-list 'auto-mode-alist '("\\.foxdot)?$" . foxdot-mode))
-;;(add-hook 'foxdot-mode-hook 'foxdot)
-
-;;Console mode - f7=H=Fn
-(define-key function-key-map (kbd "<f7>") 'event-apply-hyper-modifier)
-
-;; Display time
-(display-time)
-(setq display-time-format "%H:%M %a,%Y %b %d")
-
-;; Emms player
-;; for access bin
-(setq exec-path (append exec-path '("/usr/local/bin")))
-;; path configuration
-(add-to-list 'load-path "~/.emacs/elpa/emacs.d/elpa/emms-7.2")
-(require 'emms-setup)
-(require 'emms-player-vlc)
-(emms-standard)
-(emms-default-players)
-(define-emms-simple-player mplayer'(file url)
-  (regexp-opt '(".ogg" ".mp3" ".wav" ".mpg" ".mpeg" ".wmv" ".wma"
-                ".mov" ".avi" ".divx" ".ogm" ".asf" ".mkv" "http://" "mms://"
-                ".rm" ".rmvb" ".mp4" ".flac" ".vob" ".m4a" ".flv" ".ogv" ".pls"))
-  "mplayer" "-slave" "-quiet" "-really-quiet" "-fullscreen")
-
-;; gnus delete key
-;;(custom-set-variables
-;; '(epg-gpg-program "gpp1"))
-;;(setf epa-pinentry-mode 'loopback)
-
-;; (bind-key "<delete>" 'gnus-summary-delete-article gnus-summary-mode-map)
-
-(when (string= system-type "darwin")
-  (setq dired-use-ls-dired nil))
-
-;; Slime config sbcl
-(setq inferior-lisp-program (executable-find "sbcl"))
-
-;; tmux-collaborative-coding
-(require 'server)
-;; some systems don't auto-detect the socket dir, so specify it here and for the client:
-(setq server-socket-dir "/tmp/emacs-shared")
-(server-start)
-
-;; highlight-changes-mode is very handy when collaborating:
-;;(global-highlight-changes-mode t)
-;; Keys for moving back and forth between changes, set these to what
-;; you prefer:
-;;(global-set-key (kbd "<f5>") 'highlight-changes-previous-change)
-;;(global-set-key (kbd "<f6>") 'highlight-changes-next-change)
-;;(global-set-key (kbd "<f7>") 'highlight-changes-rotate-faces)
-;;(global-set-key (kbd "<f8>") 'highlight-changes-remove-highlight)
-
+;; synergia_startup_buffer_configuration
 (delete-other-windows)
 (sclang-switch-to-workspace)
 (split-window-horizontally)
@@ -252,5 +177,4 @@ by Prelude.")
 (sclang-start)
 
 
-
-;; init.el ends here
+;;; init.el ends here
