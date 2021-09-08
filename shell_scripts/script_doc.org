@@ -17,3 +17,12 @@
 6.
 7.
 8.
+* Alternative
+
+Run just sclang on mac. Dont need to open emacs
+
+run 1_oscgroups_sclang.sh
+
+#+begin_src sh
+./1_oscgroups_sclang.sh
+#+end_src

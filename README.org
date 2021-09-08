@@ -1,63 +1,46 @@
-#+TITLE: Collaborative editing - networked live coding performances
+#+TITLE: Synergia: A Collaborative - networked live coding interface
 
-* Set up a vpn server in rpi
+Synergia is a project for collabotative live coding in GNU Emacs and SuperCollider
+
+Synergia uses an SSH server located in Greece.
 
 
-set up router for dns
+* Installation
 
-install ovpn on rpi
+*Prerequisites*
 
-add users and export ovpn files for each user
-* set up open-vpn
+/SuperCollider/
 
-download open-vpn on mac and upload a user.ovpn
+Download SuperCollider from here: https://supercollider.github.io/download
 
-login with ssh using the server's ip (192.168.1.51)
+/OSCGroups/
 
-=ssh pi@192.168.1.51--->pass:raspberry=
+How to install oscgroups: https://github.com/RossBencina/oscgroups
 
-* install collaborative tmux with emacs
+* Accessing Synergia
 
-https://www.emacswiki.org/emacs/CollaborativeEditing
+First open terminal and Clone this repository into your computer
 
-* install OSCGroups both on rpi and mac (UNIX)
+Then go to shell_scripts folder and run the 1_novpn.sh to run OSCGroups on your
+machine and SuperCollider
 
-Client Side
+*Next step* (Connext to server)
 
-On your unix machine (in this case a Mac) create a folder and name it =OSCGroupsInstall=
+Connect to server from openvpn app and then do SSH (see [[Connect to server]])
 
-inside this folder clone OSCGroups from here: https://github.com/RossBencina/oscgroups
+then login with ssh to the server
 
-In OSCGroupsInstall folder clone also oscpack from here: https://github.com/RossBencina/oscpack
+To do this run the 2_after_vpn.sh
 
-Now go to oscgroups folder and run =make=
-
-Server side
-
-Do the same for the server side (Install OSCGroups on RPI)
-
-Now try to communicate (sending msgs from server to client and the opposite)
-
-* Sending osc from server to mac
-
-/Jason's solution/
-
-*First step*
-
-Go to oscgroups folder on your mac and run the below command:
-
-=./bin/OscGroupClient...=
-
-then open emacs and SC and run =OscGroups.enable=
-
-*Next step*
-
-Connect to vpn from openvpn app
-
-then login with =ssh= on rpi server
-
-run =./bin/OscGroupClient...= on rpi and then open emacs-shared with SC
-
-open various SC workspaces and run =OscGroups.enable= for each workspace
+On server you can start live coding with other users in SuperCollider
 
 Have fun!!
+
+* Connect to server
+
+To Connect to the server you need to download open-vpn
+
+Then open openvpn application and upload a user.ovpn
+
+For more information about open-vpn see here: https://openvpn.net/cloud-docs/user-imports-received-profile-into-connect-client/
+
