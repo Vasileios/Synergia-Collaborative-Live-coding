@@ -11,7 +11,7 @@ Synergia uses an SSH server located in Greece.
 
 /SuperCollider/
 
-Download SuperCollider from here: https://supercollider.github.io/download
+Download SuperCollider here: https://supercollider.github.io/download
 
 /OSCGroups/
 
@@ -21,8 +21,9 @@ How to install oscgroups: https://github.com/RossBencina/oscgroups
 
 First open terminal and Clone this repository into your computer
 
-Then go to shell_scripts folder and run the 1_oscgroups_sclang.sh to run OSCGroups on your
-machine and SuperCollider
+Then go to shell_scripts folder and run the 1_oscgroups_sclang.sh to run
+OSCGroups and SuperCollider on your
+machine.
 
 Then read the below to run oscgroups in SupeCollider:
 
@@ -30,13 +31,11 @@ https://github.com/iani/sc-hacks-redux/blob/master/OSCGroups/OscGroupsGuide.org
 
 *Next step* (Connext to server)
 
-Connect to server from openvpn app and then do SSH (see [[Connect to server]])
-
-then login with ssh to the server
+Connect to the server from openvpn app and then login with SSH (see [[Connect to server]])
 
 To do this run the 2_after_vpn.sh
 
-If you successfully log in to the server go to ~/startup directory and run the
+If you successfully loged in to the server go to ~/startup directory and run the
 below command:
 
 #+begin_src
@@ -57,7 +56,7 @@ You can start live coding with other users in SuperCollider
 
 Have fun!!
 
-* TODO
+* T O D O
 1. create shell script to open emacs-client and emacs with supercollider workspaces
 
 2. create a startup.scd file to boot the server and to run OscGroups.enable
