@@ -36,7 +36,7 @@ then login with ssh to the server
 
 To do this run the 2_after_vpn.sh
 
-If you succesfully logi in to the server go to ~/startup directory and run the
+If you successfully log in to the server go to ~/startup directory and run the
 below command:
 
 #+begin_src
