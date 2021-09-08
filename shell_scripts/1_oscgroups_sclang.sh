@@ -9,3 +9,7 @@ end tell' &&
 osascript -e 'tell app "Terminal"
    do script "sh -c /Applications/SuperCollider/SuperCollider.app/Contents/MacOS/sclang"
 end tell'
+#high_sierra_
+#osascript -e 'tell app "Terminal"
+#   do script "sh -c /Applications/SuperCollider.app/Contents/MacOS/sclang"
+#end tell'
