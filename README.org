@@ -17,6 +17,10 @@ Download SuperCollider here: https://supercollider.github.io/download
 
 How to install oscgroups: https://github.com/RossBencina/oscgroups
 
+*OPENVPN*
+
+Download open-vpn here: open-vpn see here:https://openvpn.net/download-open-vpn/
+
 * Accessing Synergia
 
 First open terminal and Clone this repository into your computer
