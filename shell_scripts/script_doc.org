@@ -2,7 +2,7 @@
 1. Do the appropriate adjustments in the script. Edit with any editor.
    1. Set a valid path to "/oscgroups/bin"
    2. Optional: Set the name (rpi_name --> whatever)
-2. run 1st shell script:
+2. run first oscgroups and then sclang "1st shell script" :
    #+BEGIN_SRC
    ./1_oscgroups_sclang.sh
    #+END_SRC
@@ -12,12 +12,3 @@
    ./2_after_vpn.sh
    #+END_SRC
 
-* Alternative
-
-Run just sclang on mac. Dont need to open emacs
-
-run 1_oscgroups_sclang.sh
-
-#+begin_src sh
-./1_oscgroups_sclang.sh
-#+end_src
