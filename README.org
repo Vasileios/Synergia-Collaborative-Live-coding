@@ -29,7 +29,7 @@ Then go to shell_scripts folder and run the 1_oscgroups_sclang.sh to run
 OSCGroups and SuperCollider on your
 machine.
 
-Then read the below to run oscgroups in SupeCollider:
+Then read the below to run oscgroups in SuperCollider:
 
 https://github.com/iani/sc-hacks-redux/blob/master/OSCGroups/OscGroupsGuide.org
 
