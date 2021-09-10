@@ -19,7 +19,7 @@ How to install oscgroups: https://github.com/RossBencina/oscgroups
 
 *OPENVPN*
 
-Download open-vpn here: open-vpn see here:https://openvpn.net/download-open-vpn/
+Download open-vpn here: https://openvpn.net/download-open-vpn/
 
 * Accessing Synergia
 
