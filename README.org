@@ -29,11 +29,19 @@ Then go to shell_scripts folder and run the 1_oscgroups_sclang.sh to run
 OSCGroups and SuperCollider on your
 machine.
 
+
+
+_*Jason_comment: at this point the user should edit 1_oscgroups_sclang.sh ==> 1. oscgroups path 2. username oscgroups (otherwise its blocked if 2 users same username) 3. sclang path.
+Maybe we should provide instructions for this*_
+
+
+
+
 Then read the below to run oscgroups in SuperCollider:
 
 https://github.com/iani/sc-hacks-redux/blob/master/OSCGroups/OscGroupsGuide.org
 
-*Next step* (Connext to server)
+*Next step* (Connect to server)
 
 Connect to the server from openvpn app and then login with SSH (see *Connect to
 server*)
@@ -73,4 +81,3 @@ To Connect to the server you need to download open-vpn
 Then open openvpn application and upload a user.ovpn
 
 For more information about open-vpn see here: https://openvpn.net/cloud-docs/user-imports-received-profile-into-connect-client/
-
