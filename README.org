@@ -128,6 +128,6 @@ Voila!
 Now you can go to synergia interface and start live coding with other users
 
 *TIP*: You do not need to create new files to start coding. You can use
-the existed buffers usr1_synergia_scws.scd,usr2_synergia_scws.scd, and usr3_synergia_scws.scd instead.
+the existing buffers usr1_synergia_scws.scd,usr2_synergia_scws.scd, and usr3_synergia_scws.scd instead.
 
 *Have fun!!*
