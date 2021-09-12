@@ -62,13 +62,28 @@ Open terminal and clone this repository into your home directory
 To automatically connect to Synergia server with openvpn go to /shell_scrips
 folder and run the 1_vpn_connect.sh
 
-If you successfully logged in to the server go and run the
-below command on server's terminal:
+If you successfully logged in to the server with open-vpn you are ready to ssh
+as user in the server
+
+Do do this run the below command
+
+#+begin_src
+ssh user@192.168.1.51
+#+end_src
+
+the password is 'user1' without the quotes ''
+
+If you succesfully logged in to the server you can see a window with a terminal
+
+Go and run the below command on server's terminal:
+
+Start with emacs-client
 
 #+begin_src
 emacstty
 #+end_src
- if there is no emacs server running run emacs
+
+if there is no emacs server running run emacs
 
 #+begin_src
 emacs
