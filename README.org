@@ -138,7 +138,7 @@ Save and recompile SuperCollider's class library
 
 Voila!
 
-Now you can switch to Synergia interface to collaborative musical live coding
+Now you can switch to Synergia interface to do some collaborative musical live coding
 
 *TIP*: You do not need to create new files to start coding. You can use
 the existing buffers usr1_synergia_scws.scd,usr2_synergia_scws.scd, and usr3_synergia_scws.scd instead.
