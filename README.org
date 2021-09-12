@@ -42,7 +42,7 @@ brew install openvpn
 
 Synergia uses an SSH and OscGroups server located in Greece.
 
-** Connect to Syergia OSCGroups - Emacs-server
+** Connect to Synergia OSCGroups - Emacs-server
 
 *Manually* connection to Synergia server with open-vpn app
 
