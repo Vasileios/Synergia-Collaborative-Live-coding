@@ -1,9 +1,17 @@
 #+TITLE: Synergia: A Collaborative - networked live coding interface
 
-Synergia is a project for collabotative live coding in GNU Emacs and SuperCollider
+Synergia is a project for collabotative live coding based in GNU Emacs and SuperCollider
 
-Synergia uses an SSH server located in Greece.
+* Why Emacs?
 
+Emacs is free, powerfull, and the best option to start with collaborative livecoding
+
+Synergia uses Emacs Client for collaborative editing
+
+With Emacs Client you do not start a new Emacs instance
+
+In Emacs you can customise your own designs for Networked collaborative live coding
+sessions using various tools and emacs-lisp to build your own emacs configuration
 
 * Installation
 
@@ -21,63 +29,90 @@ How to install oscgroups: https://github.com/RossBencina/oscgroups
 
 Download open-vpn here: https://openvpn.net/download-open-vpn/
 
+/Mac users/
+
+install open vpn with brew
+
+#+begin_src
+brew install openvpn
+#+end_src
+
+
 * Accessing Synergia
 
-First open terminal and Clone this repository into your computer
+Synergia uses an SSH and OscGroups server located in Greece.
 
-Then go to shell_scripts folder and run the 1_oscgroups_sclang.sh to run
-OSCGroups and SuperCollider on your
+** Connect to Syergia OSCGroups - Emacs-server
+
+*Manually* connection to Synergia server with open-vpn app
+
+To Connect to the server you need to download and intall open-vpn
+
+https://openvpn.net/download-open-vpn/
+
+open openvpn application and upload a user.ovpn
+
+For more information about open-vpn see here: https://openvpn.net/cloud-docs/user-imports-received-profile-into-connect-client/
+
+
+*Automatically* connection to Synergia server with openvpn command
+
+Open terminal and clone this repository into your home directory
+
+To automatically connect to Synergia server with openvpn go to /shell_scrips
+folder and run the 1_vpn_connect.sh
+
+If you successfully logged in to the server go and run the
+below command on server's terminal:
+
+#+begin_src
+emacstty
+#+end_src
+ if there is no emacs server running run emacs
+
+#+begin_src
+emacs
+#+end_src
+
+Emacs will run OSCGroupClient and will open an Emacs collaborative live coding session.
+
+** Next step (run oscgroups and supercollider in your unix machine)
+
+Inside the repository go to =shell_scripts= folder and run the
+=2_oscgroups_sclang_client.sh=
+
+This will run
+OscGroupClient and SuperCollider on your
 machine.
-
-
 
 _*Jason_comment: at this point the user should edit 1_oscgroups_sclang.sh ==> 1. oscgroups path 2. username oscgroups (otherwise its blocked if 2 users same username) 3. sclang path.
 Maybe we should provide instructions for this*_
 
+** Run oscgroups in SuperCollider:
 
+Clone sc-hacks-redux repositiry to your SuperCollider Extensions folder
 
+That contains OSCGroups classes for SuperCollider
 
-Then read the below to run oscgroups in SuperCollider:
+https://github.com/iani/sc-hacks-redux
 
-https://github.com/iani/sc-hacks-redux/blob/master/OSCGroups/OscGroupsGuide.org
+Now you need to edit =OscGroups.sc:=
 
-*Next step* (Connect to server)
+First go and change the oscSendPort to 22243
 
-Connect to the server from openvpn app and then login with SSH (see *Connect to
-server*)
-
-To do this run the 2_after_vpn.sh
-
-If you successfully logged in to the server go to ~/startup directory and run the
-below command:
+then go to sendAddress of *init function and change the ip from 127.0.0.1 to 192.168.1.51
 
 #+begin_src
-./process.sh
+sendAddress = NetAddr("192.168.1.51", oscSendPort);
 #+end_src
 
-This will run OSCGroupClient and will open a new tmux widnow.
-Now its time to run emacs-shared as a client.
-
-#+begin_src
-emacsshare &&
-emacstty
-#+end_src
+Save and recompile SuperCollider's class library
 
 Voila!
 
-You can start live coding with other users in SuperCollider
+Now you can go to synergia interface and start live coding with other users
 
-Have fun!!
+*TIP*: You do not need to create new files to start coding. You can use
+the existed buffers usr1_synergia_scws.scd,usr2_synergia_scws.scd, and usr3_synergia_scws.scd instead.
 
-* T O D O
-1. create shell script to open emacs-client and emacs with supercollider workspaces
-
-2. create a startup.scd file to boot the server and to run OscGroups.enable
-
-* Connect to server
-
-To Connect to the server you need to download open-vpn
-
-Then open openvpn application and upload a user.ovpn
-
-For more information about open-vpn see here: https://openvpn.net/cloud-docs/user-imports-received-profile-into-connect-client/
+*Have fun!!*

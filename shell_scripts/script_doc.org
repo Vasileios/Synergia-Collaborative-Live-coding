@@ -2,13 +2,17 @@
 1. Do the appropriate adjustments in the script. Edit with any editor.
    1. Set a valid path to "/oscgroups/bin"
    2. Optional: Set the name (rpi_name --> whatever)
-2. run first oscgroups and then sclang "1st shell script" :
+2. Configure openVPN connection (drag-drop the .opvpn file and connect)
+or run the first script to automatically connect to the server
    #+BEGIN_SRC
-   ./1_oscgroups_sclang.sh
+   ./1_vpn_connect.sh
    #+END_SRC
-3. Configure openVPN connection (drag-drop the .opvpn file and connect)
-4. run 2nd shell script:
+3. connect to the server via ssh:
+#+begin_src
+ssh user1@192.168.1.51
+pass:user1
+#+end_src
+4. then run oscgroups and then sclang:
    #+BEGIN_SRC
-   ./2_after_vpn.sh
+   ./2_oscgroups_sclang.sh
    #+END_SRC
-
