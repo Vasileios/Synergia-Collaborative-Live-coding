@@ -10,8 +10,8 @@ Synergia uses Emacs Client for collaborative editing
 
 With Emacs Client you do not start a new Emacs instance
 
-In Emacs you can customise your own designs for Networked collaborative live coding
-sessions using various tools and emacs-lisp to build your own emacs configuration
+In Emacs you can customise your own designs for Networked collaborative live
+coding. You can use various tools and wite emacs-lisp to build your own emacs configuration
 
 * Installation
 
@@ -29,7 +29,9 @@ How to install oscgroups: https://github.com/RossBencina/oscgroups
 
 Download open-vpn here: https://openvpn.net/download-open-vpn/
 
-/Mac users/
+*Alternative method - UNIX only*
+
+/Mac/
 
 install open vpn with brew
 
@@ -37,6 +39,9 @@ install open vpn with brew
 brew install openvpn
 #+end_src
 
+/Linux/
+
+https://openvpn.net/cloud-docs/openvpn-3-client-for-linux/
 
 * Accessing Synergia
 
@@ -54,10 +59,13 @@ open openvpn application and upload a user.ovpn
 
 For more information about open-vpn see here: https://openvpn.net/cloud-docs/user-imports-received-profile-into-connect-client/
 
-
 *Automatically* connection to Synergia server with openvpn command
 
-Open terminal and clone this repository into your home directory
+Open terminal and clone this repository into your =home= directory
+
+#+begin_src
+cd ~/ && git clone https://github.com/Vasileios/Synergia-Collaborative-Live-coding.git
+#+end_src
 
 To automatically connect to Synergia server with openvpn go to /shell_scrips
 folder and run the 1_vpn_connect.sh
@@ -65,17 +73,17 @@ folder and run the 1_vpn_connect.sh
 If you successfully logged in to the server with open-vpn you are ready to ssh
 as user in the server
 
-Do do this run the below command
+run the below command to connect via ssh
 
 #+begin_src
-ssh user@192.168.1.51
+ssh user1@192.168.1.51
 #+end_src
 
 the password is 'user1' without the quotes ''
 
-If you succesfully logged in to the server you can see a window with a terminal
+If you successfully logged in to the server you can see a terminal window
 
-Go and run the below command on server's terminal:
+Go and run the below command on the server's terminal:
 
 Start with emacs-client
 
@@ -91,27 +99,32 @@ emacs
 
 Emacs will run OSCGroupClient and will open an Emacs collaborative live coding session.
 
-** Next step (run oscgroups and supercollider in your unix machine)
+** Next step (run oscgroups and supercollider in your machine)
 
-Inside the repository go to =shell_scripts= folder and run the
-=2_oscgroups_sclang_client.sh=
+Inside the repository go to =shell_scripts= folder open
+=2_oscgroups_sclang_client.sh to edit the path, the username and the password of OSCGroups=
+
+SClang
+In The sclang command change the path of sclang if you are using linux or
+windows
 
 This will run
 OscGroupClient and SuperCollider on your
 machine.
 
-_*Jason_comment: at this point the user should edit 1_oscgroups_sclang.sh ==> 1. oscgroups path 2. username oscgroups (otherwise its blocked if 2 users same username) 3. sclang path.
-Maybe we should provide instructions for this*_
+** T O D O
+
+create shell scripts
 
 ** Run oscgroups in SuperCollider:
 
-Clone sc-hacks-redux repositiry to your SuperCollider Extensions folder
+Clone sc-hacks-redux repository to your SuperCollider Extensions folder
 
 That contains OSCGroups classes for SuperCollider
 
 https://github.com/iani/sc-hacks-redux
 
-To be able to send osc messages to SuperCollider on the server you will need to edit =OscGroups.sc:=
+To be able to send osc messages to SuperCollider on the server you will need to edit =OscGroups.sc=
 
 First go and change the oscSendPort to 22243
 
@@ -125,7 +138,7 @@ Save and recompile SuperCollider's class library
 
 Voila!
 
-Now you can go to synergia interface and start live coding with other users
+Now you can switch to Synergia interface to collaborative musical live coding
 
 *TIP*: You do not need to create new files to start coding. You can use
 the existing buffers usr1_synergia_scws.scd,usr2_synergia_scws.scd, and usr3_synergia_scws.scd instead.
