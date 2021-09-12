@@ -111,7 +111,7 @@ That contains OSCGroups classes for SuperCollider
 
 https://github.com/iani/sc-hacks-redux
 
-Now you need to edit =OscGroups.sc:=
+To be able to send osc messages to SuperCollider on the server you will need to edit =OscGroups.sc:=
 
 First go and change the oscSendPort to 22243
 
