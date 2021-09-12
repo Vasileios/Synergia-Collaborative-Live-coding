@@ -1,6 +1,6 @@
 #+TITLE: Synergia: A Collaborative - networked live coding interface
 
-Synergia is a project for collabotative live coding based in GNU Emacs and SuperCollider
+Synergia (Συνέργεια) is a project for collabotative live coding based in GNU Emacs and SuperCollider
 
 * Why Emacs?
 
