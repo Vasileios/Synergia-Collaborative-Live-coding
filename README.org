@@ -11,7 +11,7 @@ Synergia uses Emacs Client for collaborative editing
 With Emacs Client you do not start a new Emacs instance
 
 In Emacs you can customise your own designs for Networked collaborative live
-coding. You can use various tools and to write emacs-lisp to build your own emacs configuration
+coding. You can use various tools and you can write emacs-lisp to build your own emacs configuration
 
 * Installation
 
