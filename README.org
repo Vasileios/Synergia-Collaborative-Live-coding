@@ -70,8 +70,9 @@ cd ~/ && git clone https://github.com/Vasileios/Synergia-Collaborative-Live-codi
 To automatically connect to Synergia server with openvpn go to /shell_scrips
 folder and run the 1_vpn_connect.sh
 
-If you successfully logged in to the server with open-vpn you are ready to ssh
-as user in the server
+To manually connect with OpenVpn app read the manual in =ovpns= folder for more information
+
+If you successfully logged in to the server with open-vpn you are ready to ssh as user in the server
 
 run the below command to connect via ssh
 
@@ -104,9 +105,15 @@ Emacs will run OSCGroupClient and will open an Emacs collaborative live coding s
 Inside the repository go to =shell_scripts= folder open
 =2_oscgroups_sclang_client.sh to edit the path, the username and the userpass of OSCGroups=
 
-SClang
-In The sclang command change the path of sclang if you are using linux or
-windows
+or copy paste it from below to do it manually
+
+#+begin_src
+./bin/OscGroupClient 192.168.1.51 22242 22243 22244 22245 username userpass sccolgroup sccolpass
+#+end_src>
+
+Sclang
+
+In the sclang command change the path of sclang to your sclang path.
 
 This will run
 OscGroupClient and SuperCollider on your

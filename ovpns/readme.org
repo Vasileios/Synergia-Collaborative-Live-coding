@@ -1,5 +1,16 @@
 #+TITLE: Readme
+This set up is for 5 collaborators
 
-Upload usr1.ovpn to OpenVPN app
+One user can only upload a unique usr.ovpn from the list
 
-the password is =usr1=
+For example user Tom will upload usr1.ovpn to OpenVPN app
+User Helen will upload usr2.ovpn to OpenVPN app
+etc.
+
+*You cannot use the same usr.ovpn file if another user is using it*
+
+When you upload a ovpn file to the app it will ask you for password.
+
+usr1.ovpn password is =usr1=
+usr2.ovpn password is =usr2=
+usr3.ovpn password is usr3
