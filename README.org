@@ -102,7 +102,7 @@ Emacs will run OSCGroupClient and will open an Emacs collaborative live coding s
 ** Next step (run oscgroups and supercollider in your machine)
 
 Inside the repository go to =shell_scripts= folder open
-=2_oscgroups_sclang_client.sh to edit the path, the username and the password of OSCGroups=
+=2_oscgroups_sclang_client.sh to edit the path, the username and the userpass of OSCGroups=
 
 SClang
 In The sclang command change the path of sclang if you are using linux or
@@ -114,7 +114,7 @@ machine.
 
 ** T O D O
 
-create shell scripts
+create shell script to select automatically a usernname and a userpass for OscGroupClients
 
 ** Run oscgroups in SuperCollider:
 
