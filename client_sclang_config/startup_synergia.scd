@@ -11,7 +11,7 @@ s.waitForBoot{
 };
 
 //StageLimiter.activate;
-Safety.setLimit(0.1);
+//Safety.setLimit(0.1);//this is an extension
 
 //oscgroups
 OscGroups.enable;

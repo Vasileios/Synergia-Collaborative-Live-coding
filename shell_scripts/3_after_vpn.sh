@@ -9,7 +9,6 @@ end tell'
 #expect "user1"
 #send "user1\r"
 #interact
-
 #! /bin/sh
 #osascript -e 'tell app "Terminal"
 #do script "spawn ssh user1@192.168.1.51 expect "user1" send "user1\r" interact"

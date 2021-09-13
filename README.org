@@ -10,18 +10,18 @@ Synergia uses Emacs Client for collaborative editing
 
 With Emacs Client you do not start a new Emacs instance
 
-In Emacs you can customise your own designs for Networked collaborative live
-coding. You can use various tools and you can write emacs-lisp to build your own emacs configuration
+In Emacs you can customise your own designs for Networked Collaborative Live
+Coding. You can use various tools and you can write emacs-lisp to build your own emacs configuration
 
 * Installation
 
 *Prerequisites*
 
-/SuperCollider/
+*SuperCollider*
 
 Download SuperCollider here: https://supercollider.github.io/download
 
-/OSCGroups/
+*OSCGroups*
 
 How to install oscgroups: https://github.com/RossBencina/oscgroups
 
@@ -29,7 +29,7 @@ How to install oscgroups: https://github.com/RossBencina/oscgroups
 
 Download open-vpn here: https://openvpn.net/download-open-vpn/
 
-*Alternative method - UNIX only*
+/Alternative method - UNIX only/
 
 /Mac/
 
@@ -45,7 +45,7 @@ https://openvpn.net/cloud-docs/openvpn-3-client-for-linux/
 
 * Accessing Synergia
 
-Synergia uses an SSH and OscGroups server located in Greece.
+Synergia is a Raspberry pi /SSH/ and OscGroups server located in Greece.
 
 ** Connect to Synergia OSCGroups - Emacs-server
 
