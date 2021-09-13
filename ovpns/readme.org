@@ -1,0 +1,5 @@
+#+TITLE: Readme
+
+Upload usr1.ovpn to OpenVPN app
+
+the password is =usr1=
