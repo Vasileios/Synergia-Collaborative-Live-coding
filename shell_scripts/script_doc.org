@@ -12,7 +12,7 @@ or run the first script to automatically connect to the server
 ssh user1@192.168.1.51
 pass:user1
 #+end_src
-4. then the exec the second script to run oscgroups and sclang:
+4. then exec the second script to run oscgroups and sclang:
    #+BEGIN_SRC
    ./2_oscgroups_sclang.sh
    #+END_SRC
