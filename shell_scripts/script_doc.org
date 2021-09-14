@@ -1,17 +1,17 @@
 * Script documentation
-1. Do the appropriate adjustments in the script. Edit with any editor.
+1 Do the appropriate adjustments in the script. Edit with any editor.
    1. Set a valid path to "/oscgroups/bin"
    2. Optional: Set the name (rpi_name --> whatever)
-2. Configure openVPN connection: run the first script to automatically connect to the server
+2 Configure openVPN connection: run the first script to automatically connect to the server
    #+BEGIN_SRC
    ./1_vpn_connect.sh
    #+END_SRC
-3. connect to the server via ssh:
+3 connect to the server via ssh:
 #+begin_src
 ssh user1@192.168.1.51
 pass:user1
 #+end_src
-4. then exec the second script to run oscgroups and sclang:
+4 then exec the second script to run oscgroups and sclang:
    #+BEGIN_SRC
    ./2_oscgroups_sclang.sh
    #+END_SRC
