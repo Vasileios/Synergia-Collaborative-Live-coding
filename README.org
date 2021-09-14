@@ -49,9 +49,9 @@ Synergia is a Raspberry pi /SSH/ and OscGroups server located in Greece.
 
 ** Connect to Synergia OSCGroups - Emacs-server
 
-*Manually* connection to Synergia server with open-vpn app
+*Manual* connection to Synergia server with open-vpn app
 
-To Connect to the server you need to download and intall open-vpn
+To Connect to the server you need to download and install open-vpn
 
 https://openvpn.net/download-open-vpn/
 
