@@ -2,8 +2,7 @@
 1. Do the appropriate adjustments in the script. Edit with any editor.
    1. Set a valid path to "/oscgroups/bin"
    2. Optional: Set the name (rpi_name --> whatever)
-2. Configure openVPN connection (drag-drop the .opvpn file and connect)
-or run the first script to automatically connect to the server
+2. Configure openVPN connection: run the first script to automatically connect to the server
    #+BEGIN_SRC
    ./1_vpn_connect.sh
    #+END_SRC
