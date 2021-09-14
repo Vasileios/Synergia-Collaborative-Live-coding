@@ -88,17 +88,18 @@ Go and run the below command on the server's terminal:
 
 Start with emacs-client
 
+*WARNING*:ALWAYS START WITH EMACS-CLIENT -->emacstty
 #+begin_src
 emacstty
 #+end_src
 
-if there is no emacs server running run emacs
-
+if there is no emacs server running run the below command:
+*WARNING*: DO THIS ONLY IF THERE IS NO EMACS_SERVER ALREADY RUNNING
 #+begin_src
 emacs
 #+end_src
 
-Emacs will run OSCGroupClient and will open an Emacs collaborative live coding session.
+Emacs will open an Emacs collaborative live coding session.
 
 ** Next step (run oscgroups and supercollider in your machine)
 
@@ -131,7 +132,7 @@ That contains OSCGroups classes for SuperCollider
 
 https://github.com/iani/sc-hacks-redux
 
-To be able to send osc messages to SuperCollider on the server you will need to edit =OscGroups.sc=
+To be able to send osc messages from your SuperCollider to the server's SuperCollider you will need to edit =OscGroups.sc=
 
 First go and change the oscSendPort to 22243
 
