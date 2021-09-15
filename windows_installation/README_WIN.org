@@ -60,7 +60,7 @@ To access AppData do: Win keyboard key + R, copy and paste this, then Enter
     #+END_SRC
     then do: 
 #+BEGIN_SRC
-OscGroupClient 192.168.1.51 22242 22243 22244 22245 username userpass sccolgroup sccolpass
+OscGroupClient.exe 192.168.1.51 22242 22243 22244 22245 username userpass sccolgroup sccolpass
 #+END_SRC
 
     *Make sure that you edit both username & userpass, they can be ... well whatever you like*

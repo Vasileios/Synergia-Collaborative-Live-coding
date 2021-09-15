@@ -109,7 +109,7 @@ Inside the repository go to =shell_scripts= folder open
 or copy paste it from below to do it manually
 
 #+begin_src
-OscGroupClient.exe 192.168.1.51 22242 22243 22244 22245 username userpass sccolgroup sccolpass
+./bin/OscGroupClient 192.168.1.51 22242 22243 22244 22245 username userpass sccolgroup sccolpass
 #+end_src>
 
 Sclang
