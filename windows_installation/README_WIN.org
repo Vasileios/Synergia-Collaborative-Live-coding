@@ -13,13 +13,15 @@ This will be your guide if you are on Windows.
 
   *OSCGroups*
 
-  How to install oscgroups: https://github.com/RossBencina/oscgroups
+  Download OscGroups Windows binaries from here: http://www.rossbencina.com/code/oscgroups
+
+  ... or build from source with MINGW. You can find the source code here: https://github.com/RossBencina/oscgroups
+
+  More information on how to install OscGroups here: https://github.com/RossBencina/oscgroups
 
   *OPENVPN*
 
-  Download OscGroups Windows binaries from here: http://www.rossbencina.com/code/oscgroups  
-
-... or build from source with MINGW. You can find the source code here: https://github.com/RossBencina/oscgroups
+  Download open-vpn here: https://openvpn.net/download-open-vpn/
 
 ** Accessing Synergia
 
@@ -58,7 +60,7 @@ To access AppData do: Win keyboard key + R, copy and paste this, then Enter
     #+BEGIN_SRC
     cd "%USERPROFILE%\Desktop\oscgroups_win32_2005_06_13_1735"
     #+END_SRC
-    then do: 
+    then do:
 #+BEGIN_SRC
 OscGroupClient.exe 192.168.1.51 22242 22243 22244 22245 username userpass sccolgroup sccolpass
 #+END_SRC
