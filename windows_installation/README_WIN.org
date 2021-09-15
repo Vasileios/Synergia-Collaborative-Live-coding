@@ -17,8 +17,6 @@ This will be your guide if you are on Windows.
 
   ... or build from source with MINGW. You can find the source code here: https://github.com/RossBencina/oscgroups
 
-  More information on how to install OscGroups here: https://github.com/RossBencina/oscgroups
-
   *OPENVPN*
 
   Download open-vpn here: https://openvpn.net/download-open-vpn/
@@ -77,7 +75,7 @@ Then save and close SuperCollider.
 
     *Add sclang.exe and scsynth.exe in PATH system variable*
 
-    If sclang.exe & scsynth.exe is not included in the $PATH variable yet, do one of the following...
+    If sclang.exe & scsynth.exe are not included in the $PATH variable yet, do one of the following...
 
     1 via CMD... (open new CMD)
     #+BEGIN_SRC
