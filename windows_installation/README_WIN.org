@@ -1,0 +1,164 @@
+#+TITLE: Windows Setup: Synerg(e)ia
+
+This will be your guide if you are on Windows.
+
+* Installation
+
+  *Prerequisites*
+
+
+  *SuperCollider*
+
+  Download SuperCollider here: https://supercollider.github.io/download
+
+  *OSCGroups*
+
+  Download OscGroups Windows binaries from here: http://www.rossbencina.com/code/oscgroups
+
+  ... or build from source with MINGW. You can find the source code here: https://github.com/RossBencina/oscgroups
+
+  *OPENVPN*
+
+  Download open-vpn here: https://openvpn.net/download-open-vpn/
+
+** Accessing Synergia
+
+  *Connection to Synergia server with open-vpn app*
+
+  To Connect to the server you need to download and install open-vpn
+
+  https://openvpn.net/download-open-vpn/
+
+  For more information about open-vpn see here: https://openvpn.net/cloud-docs/user-imports-received-profile-into-connect-client/
+
+  Open openvpn application and upload a user.ovpn. Pick one .ovpn file from the current repository in the ovpns folder. Then drag and drop it to the OpenVPN GUI.
+
+
+** Run oscgroups and supercollider in your machine
+
+*** Prepare the ground for Windows*
+
+    First, go to the Extensions directory and add the OscGroups.sc file from the current directory.
+    You can find where is it via evaluating
+    #+BEGIN_SRC
+ Platform.userExtensionDir
+    #+END_SRC
+in SuperCollider.
+To access AppData do: Win keyboard key + R, copy and paste this, then Enter
+#+BEGIN_SRC
+%LocalAppData%
+#+END_SRC
+
+    *Run OscGroupClient*
+
+    If you downloaded the OscGroups binaries unzip the downloaded file to any directory.
+    open CMD
+    then go to this directory via CMD using the "cd" command followed by the path
+    e.g. if you unziped in the Desktop:
+    #+BEGIN_SRC
+    cd "%USERPROFILE%\Desktop\oscgroups_win32_2005_06_13_1735"
+    #+END_SRC
+    then do:
+#+BEGIN_SRC
+OscGroupClient.exe 192.168.1.51 22242 22243 22244 22245 username userpass sccolgroup sccolpass
+#+END_SRC
+
+    *Make sure that you edit both username & userpass, they can be ... well whatever you like*
+
+    *Configure SuperCollider startup file*
+
+    Open SuperCollider => File => open startup file and add:
+#+BEGIN_SRC
+s.boot;
+#+END_SRC
+Then save and close SuperCollider.
+
+    *Add sclang.exe and scsynth.exe in PATH system variable*
+
+    If sclang.exe & scsynth.exe are not included in the $PATH variable yet, do one of the following...
+
+    1 via CMD... (open new CMD)
+    #+BEGIN_SRC
+     setx /M path "%PATH%;C:\path\to\sclang.exe\"
+    #+END_SRC
+    (it should be somewhere in the Program Files directory, "%PROGRAMFILES%\SuperCollider - your version - \sclang.exe")
+
+    2 ... or via the GUI
+    + right click "My Computer"
+    + properties
+    + advanced settings
+    + environment variables
+    + system variables
+    + choose $PATH
+    + edit
+    + add
+    + paste the full path
+    + apply on both opened windows - menus
+
+    *Do this for both sclang.exe & scsynth.exe alternatively you can also add the whole SuperCollider path*.
+    *Then !RESTART! current CMD window*
+
+Finally, run in CMD:
+  #+BEGIN_SRC
+  sclang.exe
+  #+END_SRC
+
+  *SSH*
+
+    If you successfully logged in to the server with open-vpn you are ready to ssh as user in the server
+
+    run the below command to connect via ssh
+
+  #+begin_src
+  ssh user1@192.168.1.51
+  #+end_src
+
+  the password is 'user1' without the quotes ''
+
+  If you successfully logged in to the server you can see a terminal window
+
+  Go and run the below command on the server's terminal:
+
+  Start with emacs-client
+
+  *WARNING*:ALWAYS START WITH EMACS-CLIENT -->emacstty
+  #+begin_src
+  emacstty
+  #+end_src
+
+  if there is no emacs server running run the below command:
+  *WARNING*: DO THIS ONLY IF THERE IS NO EMACS_SERVER ALREADY RUNNING
+  #+begin_src
+  emacs
+  #+end_src
+
+  Emacs will open an Emacs collaborative live coding session.
+
+** Run oscgroups in SuperCollider:
+
+Clone sc-hacks-redux repository to your SuperCollider Extensions folder
+
+That contains OSCGroups classes for SuperCollider
+
+https://github.com/iani/sc-hacks-redux
+
+To be able to send osc messages from your SuperCollider to the server's SuperCollider you will need to edit =OscGroups.sc=
+
+First go and change the oscSendPort to 22243
+
+then go to sendAddress of *init function and change the ip from 127.0.0.1 to 192.168.1.51
+
+#+begin_src
+sendAddress = NetAddr("192.168.1.51", oscSendPort);
+#+end_src
+
+Save and recompile SuperCollider's class library
+
+Voila!
+
+Now you can switch to Synergia interface to do some collaborative musical live coding
+
+*TIP*: You do not need to create new files to start coding. You can use
+the existing buffers usr1_synergia_scws.scd,usr2_synergia_scws.scd, and usr3_synergia_scws.scd instead.
+
+*Have fun!!*
