@@ -1,6 +1,10 @@
 #+TITLE: Synerg(e)ia: A Collaborative - networked live coding interface
 
-Synerg(e)ia (Συνέργεια) is a project for collabotative live coding based in GNU Emacs and SuperCollider
+Synerg(e)ia (Συνέργεια) is an experimental project for Networked Collaborative live coding
+
+Synergia is a Raspberry pi /SSH/ and OscGroups server located in Greece
+
+Synergia based on tmux collaborative editing, Emacs server/clients and SuperCollider
 
 * Why Emacs?
 
