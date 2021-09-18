@@ -1,3 +1,4 @@
+#!/bin/sh
 #run oscgroups and sclang for usr2
 
 osascript -e 'tell app "Terminal"
