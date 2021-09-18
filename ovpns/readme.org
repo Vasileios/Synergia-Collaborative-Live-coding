@@ -1,5 +1,5 @@
 #+TITLE: Readme
-This set up is for 5 collaborators
+This set up is for 3 collaborators
 
 One user can only upload a unique usr.ovpn from the list
 
