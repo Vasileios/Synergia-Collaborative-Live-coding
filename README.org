@@ -54,6 +54,8 @@ Synergia is a remote access VPN  server located in Athens - Greece
 Live coders can log on
 to the network server using the open-vpn app
 
+** UNIX users
+
 Open terminal and clone this repository into your home directory
 
 #+begin_src
@@ -155,4 +157,8 @@ Now you can switch to Synergia interface to do some collaborative musical live c
 *TIP*: You do not need to create new files to start coding. You can use
 the existing buffers usr1_synergia_scws.scd,usr2_synergia_scws.scd, and usr3_synergia_scws.scd instead.
 
-*Have fun!!*
+*Have fun!!
+*
+** Windows users
+
+Read the instructions in windows_installation folder
