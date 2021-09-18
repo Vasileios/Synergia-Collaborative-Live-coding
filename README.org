@@ -122,43 +122,41 @@ This will run
 OscGroupClient and SuperCollider on your
 machine.
 
-Then clone the below repository to run oscgroups in SuperCollider:
-
-https://github.com/iani/sc-hacks-redux/
-
-All you need is sc-hacks-redux's OSCGroups, classes/OscGroups,Notification
-folders into your SuperCollider Extensions folder
 
 
 ** Run oscgroups in SuperCollider:
 
-Clone sc-hacks-redux repository to your SuperCollider Extensions folder
+To run OSCGroups in SuperCollider you need to install an extension
 
-That contains OSCGroups classes for SuperCollider
+clone the below repository into your SuperCollider Extensions folder to run oscgroups in SuperCollider:
 
-https://github.com/iani/sc-hacks-redux
+https://github.com/iani/sc-hacks-redux/
 
-To be able to send osc messages from your SuperCollider to the server's SuperCollider you will need to edit =OscGroups.sc=
+sc-hacks-redux by Iannis Zannos contains OSCGroups classes for SuperCollider (OscGroups and Notification)
 
-First go and change the oscSendPort to 22243
+If you want to run OscGroups on startup put the startup.scd file from = folder into your SuperCollider Extensions folder
 
-then go to sendAddress of *init function and change the ip from 127.0.0.1 to 192.168.1.51
+Recompile class library and boot the server.
 
-#+begin_src
-sendAddress = NetAddr("192.168.1.51", oscSendPort);
-#+end_src
-
-Save and recompile SuperCollider's class library
-
-Voila!
+*Voila!*
 
 Now you can switch to Synergia interface to do some collaborative musical live coding
 
 *TIP*: You do not need to create new files to start coding. You can use
 the existing buffers usr1_synergia_scws.scd,usr2_synergia_scws.scd, and usr3_synergia_scws.scd instead.
 
-*Have fun!!
-*
+*Have fun!!*
+
+*NOTE:* In order to send osc messages from your SuperCollider IDE to the server’s SuperCollider you will need to edit OscGroups.sc
+
+First go and change the oscSendPort to 22243
+
+then go to sendAddress of *init function and change the ip from 127.0.0.1 to 192.168.1.51
+
+sendAddress = NetAddr("192.168.1.51", oscSendPort);
+
+Save and recompile SuperCollider’s class library
+
 ** Windows users
 
 Read the instructions in the =windows_installation= folder
