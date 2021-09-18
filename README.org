@@ -54,6 +54,12 @@ Synergia is a remote access VPN  server located in Athens - Greece
 Live coders can log on
 to the network server using the open-vpn app
 
+Open terminal and clone this repository into your home directory
+
+#+begin_src
+cd ~/ && git clone https://github.com/Vasileios/Synergia-Collaborative-Live-coding.git
+#+end_src
+
 *Manual* connection to Synergia server with open-vpn app
 
 To Connect to the server you need to download and install open-vpn
@@ -65,12 +71,6 @@ open openvpn application and upload a user.ovpn
 For more information about open-vpn see here: https://openvpn.net/cloud-docs/user-imports-received-profile-into-connect-client/
 
 *Automatically* connection to Synergia server with openvpn command
-
-Open terminal and clone this repository into your =home= directory
-
-#+begin_src
-cd ~/ && git clone https://github.com/Vasileios/Synergia-Collaborative-Live-coding.git
-#+end_src
 
 To automatically connect to Synergia server with openvpn go to /shell_scrips
 folder and run the 1_vpn_connect.sh
