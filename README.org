@@ -62,11 +62,13 @@ cd ~/ && git clone https://github.com/Vasileios/Synergia-Collaborative-Live-codi
 
 *Manual* connection to Synergia server with open-vpn app
 
+To manually connect with OpenVpn app read the manual in =ovpns= folder for more information
+
 To Connect to the server you need to download and install open-vpn
 
 https://openvpn.net/download-open-vpn/
 
-open openvpn application and upload a user.ovpn
+open openvpn application and upload a user.ovpn that you will find in =ovpns= folder
 
 For more information about open-vpn see here: https://openvpn.net/cloud-docs/user-imports-received-profile-into-connect-client/
 
@@ -74,8 +76,6 @@ For more information about open-vpn see here: https://openvpn.net/cloud-docs/use
 
 To automatically connect to Synergia server with openvpn go to /shell_scrips
 folder and run the 1_vpn_connect.sh
-
-To manually connect with OpenVpn app read the manual in =ovpns= folder for more information
 
 If you successfully logged in to the server with open-vpn you are ready to ssh as user in the server
 
