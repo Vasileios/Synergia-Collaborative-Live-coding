@@ -19,6 +19,15 @@ echo "Directory /Applications/SuperCollider/SuperCollider.app/Contents/MacOS/ ex
 
 "/Applications/SuperCollider/SuperCollider.app/Contents/MacOS/sclang"
 
-else
+elif [ -d
+"/Applications/SuperCollider.app/Contents/MacOS/"]
+
+then
+
 "/Applications/SuperCollider.app/Contents/MacOS/sclang"
+
+else
+
+"/usr/local/bin/sclang"
+
 fi
