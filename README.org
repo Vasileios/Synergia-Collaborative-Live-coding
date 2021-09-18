@@ -161,4 +161,4 @@ the existing buffers usr1_synergia_scws.scd,usr2_synergia_scws.scd, and usr3_syn
 *
 ** Windows users
 
-Read the instructions in windows_installation folder
+Read the instructions in the =windows_installation= folder
