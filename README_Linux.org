@@ -1,0 +1,37 @@
+* SETUP LINUX UBUNTU NOTES
+
+** vpn connection
+
+   follow "Pre-built packages" instructions from https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux?__cf_chl_jschl_tk__=pmd_9kZ11Y8_ZGKXF6SqHzWPxQWUWN7eXLa1R4bATSzFGhk-1631989880-0-gqNtZGzNAeWjcnBszQk9
+
+
+cd to the .opvpn file
+
+#+BEGIN_SRC
+openvpn3 config-import --config usr1.ovpn
+  #+END_SRC
+
+copy output path /net/...
+
+to check:
+openvpn3 configs-list
+
+
+#+BEGIN_SRC
+openvpn3 session-start --config-path /net/openvpn/v3/configuration/.........
+#+END_SRC
+
+Ctrl + C to disconnect
+
+
+1./bin/OscGroupClient 192.168.1.51 22242 22243 22244 22245 penny 1245 sccolgroup sccolpass
+2. jack command for sound
+#+BEGIN_SRC
+jackd -R -d alsa -d hw:1,0 || qjackctl
+#+END_SRC
+3. /usr/bin/sclang
+4. ssh  user1@192.168.1.51
+
+pass: user1
+
+4. emacstty
