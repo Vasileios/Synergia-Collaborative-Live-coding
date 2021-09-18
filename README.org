@@ -57,7 +57,7 @@ to the network server using the open-vpn app
 Open terminal and clone this repository into your home directory
 
 #+begin_src
-cd ~/ && git clone https://github.com/Vasileios/Synergia-Collaborative-Live-coding.git
+cd ~/ && git clone https://github.com/Vasileios/Synergia-Collaborative-Live-coding.git && cd ~/Synergia-Collaborative-Live-coding
 #+end_src
 
 *Manual* connection to Synergia server with open-vpn app
