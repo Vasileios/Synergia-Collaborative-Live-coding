@@ -134,7 +134,8 @@ https://github.com/iani/sc-hacks-redux/
 
 sc-hacks-redux by Iannis Zannos contains OSCGroups classes for SuperCollider (OscGroups and Notification)
 
-If you want to run OscGroups on startup put the startup.scd file from = folder into your SuperCollider Extensions folder
+If you want to run OscGroups on startup put the startup.scd file from
+=client_sclang_config= folder into your SuperCollider Extensions folder
 
 Recompile class library and boot the server.
 
