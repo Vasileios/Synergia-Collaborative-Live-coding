@@ -3,8 +3,8 @@
 
 #oscgroups
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-terminal -e cd $(find Collaborative-Live-coding -type d | head -1) && ./bin/OscGroupClient 192.168.1.51 22242 22243 22244 22245 usr2 1234 sccolgroup sccolpass"
-end tell'
+terminal -e "cd $(find Collaborative-Live-coding -type d | head -1) && ./bin/OscGroupClient 192.168.1.51 22242 22243 22244 22245 usr2 1234 sccolgroup sccolpass"
+
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 
