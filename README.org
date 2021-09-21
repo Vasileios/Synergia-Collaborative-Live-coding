@@ -89,19 +89,11 @@ ssh user1@192.168.1.51
 
 the password is 'user1' without the quotes ''
 
-If you successfully logged in to the server you can see a terminal window
+If you successfully logged in to the server you will see an emacs scratch buffer.
 
-Go and run the below command on the server's terminal:
+You can do =C-x b= (switch-to-buffer) to select usr1, 2, 3 .scd files
 
-Start with emacs-client
-
-*WARNING*:ALWAYS START WITH EMACS-CLIENT -->emacstty
-#+begin_src bash
-emacstty
-#+end_src
-
-this will open an Emacs collaborative live coding session.
-
+You can now run SuperCollider code with =C-c C-c=
 
 ** Run OSCGroups and SuperCollider into your machine
 
