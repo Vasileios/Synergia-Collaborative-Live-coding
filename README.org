@@ -58,7 +58,7 @@ to the network server using the open-vpn app
 
 Open terminal and clone this repository into your home directory
 
-#+begin_src
+#+begin_src bash
 cd ~/ && git clone https://github.com/Vasileios/Synergia-Collaborative-Live-coding.git && cd ~/Synergia-Collaborative-Live-coding
 #+end_src
 
@@ -83,7 +83,7 @@ If you successfully logged in to the server with open-vpn you are ready to ssh a
 
 run the below command to connect via ssh
 
-#+begin_src
+#+begin_src bash
 ssh user1@192.168.1.51
 #+end_src
 
@@ -96,7 +96,7 @@ Go and run the below command on the server's terminal:
 Start with emacs-client
 
 *WARNING*:ALWAYS START WITH EMACS-CLIENT -->emacstty
-#+begin_src
+#+begin_src bash
 emacstty
 #+end_src
 
@@ -114,7 +114,7 @@ You might need to change the sclang path in the script
 
 To run this from you terminal do the following:
 
-#+begin_src
+#+begin_src bash
 ./usr1_oscgroups_sclang.sh
 #+end_src>
 
