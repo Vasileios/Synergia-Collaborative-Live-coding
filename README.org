@@ -39,7 +39,7 @@ Download open-vpn here: https://openvpn.net/download-open-vpn/
 
 install open vpn with brew
 
-#+begin_src
+#+begin_src bash
 brew install openvpn
 #+end_src
 
