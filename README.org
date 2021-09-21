@@ -8,7 +8,7 @@ Synergia based on tmux collaborative editing, Emacs server/clients and SuperColl
 
 * Why Emacs?
 
-Emacs is free, powerfull, and the best option to start with collaborative livecoding
+Emacs is free, powerfull, and thus an attractive option to start with collaborative livecoding
 
 Synergia uses Emacs Client for collaborative editing
 
