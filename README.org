@@ -106,7 +106,7 @@ this will open an Emacs collaborative live coding session.
 ** Run OSCGroups and SuperCollider into your machine
 
 Inside the repository go to =shell_scripts= folder and run the script that is
-related to your usr.ovpn connection
+related to your usr.ovpn connection.
 In a few words, if you have connected with usr1.ovpn in the server via OpenVPN
 app then you will use 'usr1_oscgroups_sclang.sh'
 
