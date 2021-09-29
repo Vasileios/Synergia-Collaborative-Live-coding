@@ -1,4 +1,4 @@
-#+TITLE: Synerg(e)ia: A Collaborative - networked live coding interface
+#+TITLE: Synerg(e)ia: A Collaborative - networked live coding environment
 
 Synerg(e)ia (Συνέργεια) is an experimental project for Networked Collaborative live coding
 
