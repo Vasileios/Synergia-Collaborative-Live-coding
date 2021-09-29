@@ -93,7 +93,7 @@ If you successfully logged in to the server you will see an emacs scratch buffer
 
 You can do =C-x b= (switch-to-buffer) to select usr1, 2, 3 .scd files
 
-You can now run SuperCollider code with =C-c C-c=
+You can now run SuperCollider code with =Shift 2=
 
 ** Run OSCGroups and SuperCollider into your machine
 
