@@ -38,66 +38,65 @@ This will be your guide if you are on Windows.
 
 ** Run oscgroups and supercollider in your machine
 
-*** Windows configuration*
+   *Configure SuperCollider startup file*
 
-    *Configure SuperCollider startup file*
+   Open SuperCollider => click on "File" => click "open startup file" and add:
+   #+BEGIN_SRC
+ s.boot;
+ OscGroups.enable;
+   #+END_SRC
+   Then save and close SuperCollider.
 
-    Open SuperCollider => click on "File" => click "open startup file" and add:
-    #+BEGIN_SRC
-s.boot;
-OscGroups.enable;
-    #+END_SRC
-    Then save and close SuperCollider.
+   *Add sclang.exe and scsynth.exe to the PATH system variable*
 
-    *Add sclang.exe and scsynth.exe in PATH system variable*
+   If sclang.exe & scsynth.exe are not included in the $PATH variable yet, do one of the following...
 
-    If sclang.exe & scsynth.exe are not included in the $PATH variable yet, do one of the following...
+   1 via CMD... (open new CMD)
+   #+BEGIN_SRC
+      setx /M path "%PATH%;C:\path\to\sclang.exe\"
+   #+END_SRC
+   (it should be somewhere in the Program Files directory, "%PROGRAMFILES%\SuperCollider - your version - \sclang.exe")
 
-    1 via CMD... (open new CMD)
-    #+BEGIN_SRC
-     setx /M path "%PATH%;C:\path\to\sclang.exe\"
-    #+END_SRC
-    (it should be somewhere in the Program Files directory, "%PROGRAMFILES%\SuperCollider - your version - \sclang.exe")
+   2 ... or via the GUI
+   + right click "My Computer"
+   + properties
+   + advanced settings
+   + environment variables
+   + system variables
+   + choose $PATH
+   + edit
+   + add
+   + paste the full path
+   + click "apply" on both opened windows - menus
 
-    2 ... or via the GUI
-    + right click "My Computer"
-    + properties
-    + advanced settings
-    + environment variables
-    + system variables
-    + choose $PATH
-    + edit
-    + add
-    + paste the full path
-    + apply on both opened windows - menus
+     *Do this for both sclang.exe & scsynth.exe alternatively you can also add the whole SuperCollider path*.
+     *Then !RESTART! current CMD window*
 
-    *Do this for both sclang.exe & scsynth.exe alternatively you can also add the whole SuperCollider path*.
-    *Then !RESTART! current CMD window*
+     Finally, run in CMD to check:
+     #+BEGIN_SRC
+   sclang.exe
+     #+END_SRC
+     Then Ctrl-c to kill running process.
 
-    Finally, run in CMD:
-    #+BEGIN_SRC
-  sclang.exe
-    #+END_SRC
+     *SSH*
 
-    *SSH*
+     If you successfully logged in to the server with open-vpn you are ready to ssh as user in the server
 
-    If you successfully logged in to the server with open-vpn you are ready to ssh as user in the server
+     run the below command to connect via ssh
 
-    run the below command to connect via ssh
+     #+begin_src
+   ssh user1@192.168.1.51
+     #+end_src
 
-    #+begin_src
-  ssh user1@192.168.1.51
-    #+end_src
+     the password is 'user1' without the quotes ''
 
-    the password is 'user1' without the quotes ''
+     If you successfully logged in to the server you will see an emacs scratch buffer.
 
-    If you successfully logged in to the server you will see an emacs scratch buffer.
+     You can do =C-x b= (switch-to-buffer) to select usr1, 2, 3 .scd files
 
-    You can do =C-x b= (switch-to-buffer) to select usr1, 2, 3 .scd files
+     You can now run SuperCollider code with =Shift 2=  If you successfully logged in to the server you can see a terminal window
 
-    You can now run SuperCollider code with =Shift 2=  If you successfully logged in to the server you can see a terminal window
-
-    Emacs will open an Emacs collaborative live coding session.
+     Emacs will open an Emacs collaborative live coding session.
 
 ** Run oscgroups in SuperCollider:
 
@@ -138,6 +137,10 @@ OscGroupClient.exe 192.168.1.51 22242 22243 22244 22245 username userpass sccolg
    =client_sclang_config= folder into your SuperCollider Extensions folder
 
    Recompile class library and boot the server.
+   Open a new CMD window and simply do:
+#+BEGIN_SRC
+sclang.exe
+#+END_SRC
 
    *Voila!*
 
