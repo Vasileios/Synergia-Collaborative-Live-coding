@@ -140,16 +140,6 @@ the existing buffers usr1_synergia_scws.scd,usr2_synergia_scws.scd, and usr3_syn
 
 *Have fun!!*
 
-*NOTE:* In order to send osc messages from your SuperCollider IDE to the server’s SuperCollider you will need to edit OscGroups.sc
-
-First go and change the oscSendPort to 22243
-
-then go to sendAddress of *init function and change the ip from 127.0.0.1 to 192.168.1.51
-
-sendAddress = NetAddr("192.168.1.51", oscSendPort);
-
-Save and recompile SuperCollider’s class library
-
 ** Windows users
 
 Read the instructions in the =windows_installation= folder
