@@ -3,13 +3,13 @@
 
 #oscgroups
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-terminal -e "cd $(find Synergia-Collaborative-Live-coding -type d | head -1) && ./bin/OscGroupClient 192.168.1.51 22242 22243 22244 22245 usr3 1234 sccolgroup sccolpass"
+terminal -e "cd $(find Synergia-Collaborative-Live-coding -type d | head -1) && ./bin/OscGroupClient 10.8.0.1 22242 22243 22244 22245 usr3 1234 sccolgroup sccolpass"
 
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 
 osascript -e 'tell app "Terminal"
-do script "cd $(find Synergia-Collaborative-Live-coding -type d | head -1) && ./bin/OscGroupClient 192.168.1.51 22242 22243 22244 22245 usr3 1234 sccolgroup sccolpass"
+do script "cd $(find Synergia-Collaborative-Live-coding -type d | head -1) && ./bin/OscGroupClient 10.8.0.1 22242 22243 22244 22245 usr3 1234 sccolgroup sccolpass"
 end tell'
 
 else

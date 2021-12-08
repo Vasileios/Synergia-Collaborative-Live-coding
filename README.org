@@ -84,7 +84,7 @@ If you successfully logged in to the server with open-vpn you are ready to ssh a
 run the below command to connect via ssh
 
 #+begin_src bash
-ssh user1@192.168.1.51
+ssh user1@10.8.0.1
 #+end_src
 
 the password is 'user1' without the quotes ''

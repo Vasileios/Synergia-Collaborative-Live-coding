@@ -24,7 +24,7 @@ openvpn3 session-start --config-path /net/openvpn/v3/configuration/.........
 Ctrl + C to disconnect
 
 
-1 /bin/OscGroupClient 192.168.1.51 22242 22243 22244 22245 penny 1245 sccolgroup sccolpass
+1 /bin/OscGroupClient 10.8.0.1 22242 22243 22244 22245 penny 1245 sccolgroup sccolpass
 
 2 jack command for sound
 #+BEGIN_SRC
@@ -33,7 +33,7 @@ jackd -R -d alsa -d hw:1,0 || qjackctl
 
 3 /usr/bin/sclang
 
-4 ssh  user1@192.168.1.51
+4 ssh  user1@10.8.0.1
 
 pass: user1
 

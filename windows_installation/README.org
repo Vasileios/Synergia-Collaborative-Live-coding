@@ -85,7 +85,7 @@ This will be your guide if you are on Windows.
      run the below command to connect via ssh
 
      #+begin_src
-   ssh user1@192.168.1.51
+   ssh user1@10.8.0.1
      #+end_src
 
      the password is 'user1' without the quotes ''
@@ -128,7 +128,7 @@ This will be your guide if you are on Windows.
    #+END_SRC
    then do:
    #+BEGIN_SRC
-OscGroupClient.exe 192.168.1.51 22242 22243 22244 22245 username userpass sccolgroup sccolpass
+OscGroupClient.exe 10.8.0.1 22242 22243 22244 22245 username userpass sccolgroup sccolpass
    #+END_SRC
 
    *Make sure that you edit both username & userpass, they can be ... well whatever you like*
@@ -151,12 +151,3 @@ sclang.exe
 
    *Have fun!!*
 
-   *NOTE:* In order to send osc messages from your SuperCollider IDE to the server’s SuperCollider you will need to edit OscGroups.sc
-
-   First go and change the oscSendPort to 22243
-
-   then go to sendAddress of *init function and change the ip from 127.0.0.1 to 192.168.1.51
-
-   sendAddress = NetAddr("192.168.1.51", oscSendPort);
-
-   Save and recompile SuperCollider’s class library
