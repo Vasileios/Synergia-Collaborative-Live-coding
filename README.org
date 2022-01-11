@@ -114,7 +114,23 @@ This will run
 OscGroupClient and SuperCollider on your
 machine.
 
+To manually run the OscGroups client binary onto your machine you need to:
 
+open the terminal and to go to Synergia Github repository
+
+then run the bellow command
+
+#+begin_src bash
+./bin/OscGroupClient 10.8.0.1 22242 22243 22244 22245 username pass sccolgroup sccolpass
+#+end_src>
+
+You need to change the 'username' and 'pass'
+
+Example:
+
+#+begin_src bash
+./bin/OscGroupClient 10.8.0.1 22242 22243 22244 22245 john 1234 sccolgroup sccolpass
+#+end_src>
 
 ** Run oscgroups in SuperCollider:
 
