@@ -1,0 +1,12 @@
+#+TITLE: Readme
+
+Open SuperCollider and run the below
+  command:
+
+HelpBrowser.openHelpFor("Synergia");
+
+//If you use SuperCollider on emacs you
+  need to find help in gui with C-c h and
+  then to run the below:
+
+HelpBrowser.openHelpFor("Synergia");
