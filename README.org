@@ -144,7 +144,7 @@ sc-hacks-redux by Iannis Zannos contains OSCGroups classes for SuperCollider (Os
 
 See more on Synergia SuperCollider help file
 
-Place the startup file the Synergia SuperCollider help file (=client_sclang_config= folder) into your SuperCollider Extensions directory
+Place the startup file and the Synergia SuperCollider help file (=client_sclang_config= folder) into your SuperCollider Extensions directory
 
 Recompile class library and boot the server.
 
