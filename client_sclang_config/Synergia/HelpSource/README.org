@@ -1,7 +1,8 @@
 #+TITLE: Readme
+To open Synergia help go to SuperCollider and press C-d or on Emacs (C-c h) on
+Synergia().
 
-Open SuperCollider and run the below
-  command:
+To run Synergia help file from Synergia server run the below code:
 
 HelpBrowser.openHelpFor("Synergia");
 
