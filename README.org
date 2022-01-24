@@ -144,7 +144,7 @@ sc-hacks-redux by Iannis Zannos contains OSCGroups classes for SuperCollider (Os
 
 If you need Synergia help file and to run OscGroups on startup put the Synergia
 folder and startup.scd file from
-=client_sclang_config= folder into your SuperCollider Extensions folder
+=client_sclang_config= folder into your SuperCollider Extensions directory
 
 Recompile class library and boot the server.
 
