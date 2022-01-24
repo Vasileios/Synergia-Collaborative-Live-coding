@@ -1,0 +1,39 @@
+TITLE::Synergia
+summary::Synergia help
+categories::Networked Live Coding
+
+related::Classes/Synergia
+
+DESCRIPTION::Networked Collaborative Live Coding environment
+
+section:: Introduction
+
+Synergia is an experimental network collaborative live coding environment based on EMACS editor for colaborative coding and OSCGroups for peer to peer messaging.
+
+Connect to Synergia OSCGroups server
+
+First you need to connect to Synergia:
+
+1. Download the OpenVPN client application
+
+Use the .ovpn profiles found in Synergia repository to connect to the server via OpenVPN application
+
+2. Run OSCGroups client binary
+
+To run OSCGroups client binary onto your machine to connect with Synergia OSCGroups server you need to:
+
+1. open the terminal and cd to Synergia Github repository
+
+2. then run the below command
+
+code::
+./bin/OscGroupClient 10.8.0.1 2242 22243 22244 22245 username password sccolgroup sccolpass
+::
+
+Change the username and the password
+
+Example:
+
+code::
+./bin/OscGroupClient 10.8.0.1 2242 22243 22244 22245 john 1234 sccolgroup sccolpass
+::
