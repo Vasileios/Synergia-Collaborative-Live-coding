@@ -142,15 +142,20 @@ https://github.com/iani/sc-hacks-redux/
 
 sc-hacks-redux by Iannis Zannos contains OSCGroups classes for SuperCollider (OscGroups and Notification)
 
-See more on Synergia SuperCollider help file
+More information about running OSCGroups client binary on Synergia SuperCollider
+help file. (=client_sclang_config= folder).
 
-Place the startup file and the Synergia SuperCollider help file (=client_sclang_config= folder) into your SuperCollider Extensions directory
+Place the startup file and the Synergia folder with the SuperCollider help file (=client_sclang_config= folder) into your SuperCollider Extensions directory
 
 Recompile class library and boot the server.
 
 *Voila!*
 
 Now you can switch to Synergia interface to do some collaborative musical live coding
+
+You can experiment with classes for live coding such as BA and sc-hacks
+
+https://github.com/Vasileios/BA
 
 *TIP*: You do not need to create new files to start coding. You can use
 the existing buffers usr1_synergia_scws.scd,usr2_synergia_scws.scd, and usr3_synergia_scws.scd instead.
