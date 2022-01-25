@@ -116,7 +116,7 @@ machine.
 
 To manually run the OscGroups client binary onto your machine you need to:
 
-open the terminal and to go to Synergia Github repository
+open the terminal and to cd to Synergia Github repository
 
 then run the bellow command
 
